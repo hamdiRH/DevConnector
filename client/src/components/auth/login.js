@@ -1,20 +1,19 @@
 import React, { Fragment, useState } from "react";
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom";
 const Login = () => {
   const [formData, setFormData] = useState({
     email: "",
     password: ""
   });
 
-  const {email, password } = formData;
+  const { email, password } = formData;
   const onChange = e => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
   const onSubmit = async e => {
     e.preventDefault();
- 
-      console.log("success");
-    
+
+    console.log("success");
   };
   return (
     <Fragment>
@@ -23,7 +22,6 @@ const Login = () => {
         <i className="fas fa-user"></i> Sign Into Your Account
       </p>
       <form className="form" onSubmit={onSubmit}>
-  
         <div className="form-group">
           <input
             type="email"
@@ -32,7 +30,6 @@ const Login = () => {
             value={email}
             onChange={onChange}
           />
-       
         </div>
         <div className="form-group">
           <input
@@ -44,11 +41,11 @@ const Login = () => {
             onChange={onChange}
           />
         </div>
-   
+
         <input type="submit" className="btn btn-primary" value="Login" />
       </form>
       <p className="my-1">
-        don't have an account? <Link to="/register">Sign Up</Link> 
+        don't have an account? <Link to="/register">Sign Up</Link>
       </p>
     </Fragment>
   );
