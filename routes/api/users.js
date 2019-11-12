@@ -3,6 +3,7 @@ const router = express.Router();
 const gravatar = require("gravatar");
 const bcrypt = require("bcryptjs");
 const config = require("config");
+const jwt = require("jsonwebtoken");
 const { check, validationResult } = require("express-validator");
 
 const User = require("../../model/User");
@@ -62,9 +63,9 @@ router.post(
           if (err) throw err;
           res.json({ token });
         }
-      )
+      );
 
-    //   res.send(user);
+      //   res.send(user);
     } catch (err) {
       console.log(err);
       res.status(500).send("Server error");
