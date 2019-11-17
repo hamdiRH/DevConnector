@@ -12,10 +12,9 @@ const Profile = require("../../model/Profile");
 // @access Private
 router.get("/me", auth, async (req, res) => {
   try {
-    const profile = await Profile.findOne({ user: req.user.id }).populate(
-      "user",
-      ["name", "avatar"]
-    );
+    const profile = await Profile.findOne({
+      user: req.user.id
+    }).populate("user", ["name", "avatar"]);
 
     if (!profile) {
       return res.status(400).json({ msg: "there is no profile for this user" });
@@ -155,7 +154,7 @@ router.delete("/", auth, async (req, res) => {
 // @desc   Add profile experience
 // @access Private
 router.put(
-  "./experience",
+  "/experience",
   [
     auth,
     check("title", "Title is required")
@@ -217,7 +216,7 @@ router.delete("/experience/:exp_id", auth, async (req, res) => {
 // @desc   Add profile education
 // @access Private
 router.put(
-  "./education",
+  "/education",
   [
     auth,
     check("school", "School is required")
