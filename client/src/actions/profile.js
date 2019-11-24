@@ -45,9 +45,9 @@ export const getProfiles = () => async dispatch => {
   }
 };
 //get  profile by id
-export const getProfileById = (userId) => async dispatch => {
+export const getProfileById = userId => async dispatch => {
   try {
-    const res = await axios.get(`/api/profile/user${userId}`);
+    const res = await axios.get(`/api/profile/user/${userId}`);
 
     dispatch({
       type: GET_PROFILE,
@@ -61,7 +61,7 @@ export const getProfileById = (userId) => async dispatch => {
   }
 };
 //get Github repos
-export const getGithubRepos = (username => async dispatch => {
+export const getGithubRepos = username => async dispatch => {
   try {
     const res = await axios.get(`/api/profile/github/${username}`);
 
@@ -75,7 +75,7 @@ export const getGithubRepos = (username => async dispatch => {
       payload: { msg: err.response.statusText, status: err.response.status }
     });
   }
-});
+};
 // Create or update a profile
 export const createProfile = (
   formData,
