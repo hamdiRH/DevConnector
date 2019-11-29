@@ -1,0 +1,6 @@
+{
+  "mongoURI": "mongodb+srv://mern:mern@cluster0-lrvsi.mongodb.net/bradsocialmedia?retryWrites=true&w=majority",
+  "jwtSecret": "mysecrettoken",
+  "githubClientId": "Iv1.ab44ae60b5ac3fac",
+  "githubSecret": "d677134e25ac85cbf7891ad7fe55bfc8ebbc8523"
+}
